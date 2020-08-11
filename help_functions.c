@@ -9,7 +9,7 @@ int _strlen(char *s)
 	int len;
 
 	for (len = 0; s[len]; len++)
-    ;
+	;
 	return (len);
 }
 /**
@@ -18,11 +18,12 @@ int _strlen(char *s)
  * @src: pinter
  * Return: diferent zero
  */
+
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
 
-	while (src[i] != '\0')
+	while (src[i])
 	{
 		dest[i] = src[i] + '\0';
 		i++;
@@ -30,6 +31,7 @@ char *_strcpy(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
+
 /**
 * _strcat -  function to concatenate two strings
 * @dest: first string
@@ -41,9 +43,9 @@ char *_strcat(char *dest, char *src)
 	int i = 0;
 	int j = 0;
 
-	while (dest[i] != '\0')
+	while (dest[i])
 		i++;
-	while (src[j] != '\0')
+	while (src[j])
 	{
 		dest[i + j] = src[j];
 		j++;
@@ -62,39 +64,35 @@ int _strcmp(char *s1, char *s2)
 
 	while ((s1[i] && s2[j]) && s1[i])
 		i++, j++;
+
 	if (s1[i] == s2[j])
 		return (0);
 	else
 		return (s1[i] - s2[j]);
 	return (0);
 }
+
 /**
- * _strdup - returns a pointer to a newly allocated space in memory
- *           which contains a copy of the string given as a parameter.
+ * _strdup - returns a pointer to the new copy of string allocated with malloc
  * @str: string to copy
  * Return: Pointer to newly allocated space in memory
  */
 char *_strdup(char *str)
 {
-	char *s;
 	unsigned int i, j;
+	char *dest;
 
 	if (str == NULL)
-		return (NULL);
-	j = 0;
-	while (str[j] != '\0')
-	{
-		j++;
-	}
-	s = malloc(sizeof(char) * (j + 1));
-	if (s == NULL)
-		return (NULL);
-	i = 0;
-	while (j > 0)
-	{
-		s[i] = str[i];
-		i++;
-		j--;
-	}
-	return (s);
+	return (NULL);
+
+	for (i = 0; *(str + i); i++)
+		;
+	dest = malloc(sizeof(char) * (i + 1));
+
+	if (dest == NULL)
+	return (NULL);
+
+	for (j = 0; j <= i ; j++)
+		*(dest + j) = *(str + j);
+	return (dest);
 }
