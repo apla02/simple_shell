@@ -13,4 +13,6 @@ char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
 char *_which(char *s);
+char *_getenv(const char *name);
+void _analize(char *str);
 #endif
