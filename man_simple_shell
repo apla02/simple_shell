@@ -3,7 +3,7 @@
 .TH dash 1 "06 August 2020" "1.0" "shell man page"
 
 .SH NAME
-    hsh - interface to the Unix system kernel
+    sh - interface to the Unix system kernel
 
 .SH SYNOPSIS
     $ [command] [-flags ]
