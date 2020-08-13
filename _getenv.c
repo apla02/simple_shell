@@ -1,16 +1,12 @@
 #include "holberton.h"
-#include <string.h>
-#include <stdio.h>
-
 /**
- *_getenv - looks at environment variable and returns a pointer to string
+ * _getenv - looks at environment variable and returns a pointer to string
  *@name: the name of the environmental variable
  *
  *Return: pointer to the environmental variable
  */
 char *_getenv(const char *name)
 {
-	extern char **environ;
 	char **env = environ;
 	int i = 0;
 	int j = 0;
