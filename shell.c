@@ -18,13 +18,13 @@ int main(void)
 		write(STDIN_FILENO, "$ ", 2);
 	while ((read = getline(&line, &n, stdin)) != EOF)
 	{
-		printf("%s", line);
+		//printf("%s", line);
 		if(!(_match("exit", line)))
 		{
-			if (line[4] == ' ' || line[4] == '\n' || line[4] == '\t')
+			if ((line[4] == ' ' || line[4] == '\n' || line[4] == '\t'))
 			{
 				free(line);
-				exit(0);/* looking for the right number for to exit from the terminal*/
+				exit(EXIT_SUCCESS);
 			}
 			else
 			{
@@ -33,14 +33,14 @@ int main(void)
 		}
 		else if(!(_match("env", line)))
 		{
-			if (line[3] == ' ' || line[3] == '\n' || line[3] == '\t')
+			if ((line[3] == ' ' || line[3] == '\n' || line[3] == '\t') && read <= 5)
 			{
 				_envprint(environ);
 			}
 			else
 			{
-
-				write(STDIN_FILENO, "No founded\n", 11);
+				write(STDIN_FILENO, line, read - 1);
+				write(STDIN_FILENO, ": command not found\n", 21);
 			}
 		}
 		else
@@ -50,19 +50,4 @@ int main(void)
 		line = NULL, n = 0;
 	}
 	return (0);
-}
-int _match(char *str1, char *line)
-{
-    while (*str1)
-    {
-      
-      if(*str1 == *line)
-        str1++, line++;
-      else
-        break;
-    }
-    if (*str1)
-      return (1);
-    else  
-      return(0);
 }
