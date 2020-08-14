@@ -38,20 +38,37 @@ char *_strcpy(char *dest, char *src)
 * @src: second string
 * Return: no zero
 */
-char *_strcat(char *dest, char *src)
+char *str_concat(char *s1, char *s2)
 {
-	int i = 0;
-	int j = 0;
+	char *concatenar;
+	unsigned int i, j, cp, r, final_leng;
 
-	while (dest[i])
-		i++;
-	while (src[j])
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	for (i = 0; s1[i] != '\0'; i++)
+		;
+	for (j = 0; s2[j] != '\0'; j++)
+		;
+	final_leng = i + j + 1;
+
+	concatenar = malloc(final_leng * sizeof(char));
+
+	if (concatenar == NULL)
+		return (NULL);
+
+	for (cp = 0; cp < i; cp++)
 	{
-		dest[i] = src[j];
-		j++, i++;
+		concatenar[cp] = s1[cp];
 	}
-	dest[i] = '\0';
-	return (dest);
+	for (r = 0; r < j; cp++, r++)
+	{
+		concatenar[cp] = s2[r];
+	}
+
+	return (concatenar);
 }
 /**
 * _strcmp -  function to compare two strings
