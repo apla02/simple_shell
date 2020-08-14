@@ -38,7 +38,7 @@ char *_strcpy(char *dest, char *src)
 * @src: second string
 * Return: no zero
 */
-char *str_concat(char *s1, char *s2)
+char *_str_concat(char *s1, char *s2)
 {
 	char *concatenar;
 	unsigned int i, j, cp, r, final_leng;
@@ -113,4 +113,25 @@ char *_strdup(char *str)
 	for (j = 0; j <= i ; j++)
 		*(dest + j) = *(str + j);
 	return (dest);
+}
+/**
+ * _match - compare to the new copy of string allocated with malloc
+ * @str: string 1 to compare
+ * @line: str 2 to compare
+ * Return: Pointer to newly allocated space in memory
+ */
+int _match(char *str1, char *line)
+{
+    while (*str1)
+    {
+      
+      if(*str1 == *line)
+        str1++, line++;
+      else
+        break;
+    }
+    if (*str1)
+      return (1);
+    else  
+      return(0);
 }
