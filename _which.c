@@ -8,7 +8,7 @@ char *_which(char *arg)
 {
 	struct stat exist;
 	int i = 1;
-	char *get_path = getenv("PATH");
+	char *get_path = _getenv("PATH");
 	char slash[] = {"/"};
 	char *get_path1 = _strdup(get_path);
 	int num_paths = counter_paths(get_path1);
@@ -25,18 +25,23 @@ char *_which(char *arg)
 	i = 0;
 	while (buffer[i])
 	{
-		/*printf("%s\n", buffer[i]);*/
 		whole_path = _str_concat(buffer[i], extension);
-		/*printf("%s\n", whole_path);*/
 		if ((stat(whole_path, &exist)) == 0)
 		{
 			whole_path1 = _strdup(whole_path);
+			free(get_path1);
+			free(buffer);
+			free(extension);
+			free(whole_path);
 			printf("%s\n", whole_path1);
 			return (whole_path1);
 		}
 		i++;
+		free(whole_path);
 	}
-return (NULL);
+	free(extension);
+	free(get_path1);
+return (arg);
 }
 /**
  * counter_paths- function to counts the numbers of paths
@@ -59,4 +64,3 @@ int counter_paths(char *string)
 	}
 	return (counting + 1);
 }
-
