@@ -1,55 +1,57 @@
 #include "holberton.h"
-int counter_words(char *String);
-int _fork(char **argv);
+int counter_words(char *string);
+int _execute(char **argv);
 void _analize(char *str)
 {
 	char *tokenizar;
 	int i = 1;
 	int n = counter_words(str);
-	char **argv = malloc(sizeof(char*) * (n + 1));
+	char **argv = malloc(sizeof(char *) * (n + 1));
 	*argv = strtok(str, " \n\t");
+	//_which(str);
+	//return;
 
-	while ( i <= n )
+	while (i <= n)
 	{
 		argv[i] = strtok(NULL, " \n\t");
-		i++;     
+		i++;
+
 	}
 	argv[i] = NULL;
-
-	i = 0;
-	_fork(argv);
-	free (argv);
+	_execute(argv);
+	free(argv);
 }
-int counter_words(char *String)
+int counter_words(char *string)
 {
-	int State = 1;  
-	int Counter_Word = 0;
-	while (*String)
+	int state = 1;
+	int counting = 0;
+	
+	while (*string)
 	{
-		if (*String == '\n' || *String == '\t' || *String == ' ')
-			State = 1;
+		if (*string == '\n' || *string == '\t' || *string == ' ')
+			state = 1;
 		else
-			if (State == 1)
-				Counter_Word++, State = 0;
-				String++;
-		} 
-	return (Counter_Word);
+			if (state == 1)
+				counting++, state = 0;
+				string++;
+		}
+	return (counting);
 }
-int _fork(char **argv)
+int _execute(char **argv)
 {
 	int status;
 	pid_t child_pid = fork();
-		
-	if (child_pid == -1) {
-			perror("Error:");
-	}
+
+	if (child_pid == -1)
+		perror("Error:");
 	/* The child process*/
 	else if (child_pid == 0)
 	{
 		execve(*argv, argv, NULL);
 	}
-	else 
+	else
+	{
 		wait(&status);
- 
-	return 0;
+	}
+	return (0);
 }

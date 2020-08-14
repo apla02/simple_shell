@@ -64,3 +64,10 @@ int counter_paths(char *string)
 	}
 	return (counting + 1);
 }
+int main()
+{
+
+	char *name = "cp";
+	_which(name);
+	return (0);
+}
