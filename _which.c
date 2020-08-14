@@ -21,12 +21,12 @@ char *_which(char *arg)
 		buffer[i] = strtok(NULL, ":");
 		i++;
 	}
-	extension = _strcat(slash, arg);/* está funcionando*/
+	extension = _str_concat(slash, arg);/* está funcionando*/
 	i = 0;
 	while (buffer[i])
 	{
 		/*printf("%s\n", buffer[i]);*/
-		whole_path = _strcat(buffer[i], extension);
+		whole_path = _str_concat(buffer[i], extension);
 		/*printf("%s\n", whole_path);*/
 		if ((stat(whole_path, &exist)) == 0)
 		{
