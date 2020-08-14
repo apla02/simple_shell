@@ -15,6 +15,7 @@ char *_strdup(char *str);
 char *_which(char *s);
 char *_getenv(const char *name);
 void _analize(char *str);
+int _execute(char **argv);
 extern char **environ;
 void _envprint(char **env);
 int _match(char *str1, char *line);
