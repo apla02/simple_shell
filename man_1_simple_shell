@@ -1,0 +1,100 @@
+.\" Manpage for Shell
+
+.TH dash 1 "06 August 2020" "1.0" "shell man page"
+
+.SH NAME
+    sh - interface to the Unix system kernel
+
+.SH SYNOPSIS
+    $ [command] [-flags ]
+
+.SH DESCRIPTION
+     A Shell provides you with an interface to the system kernel.
+     It gathers input from you and  executes  programs  based on
+     that input. When a program  finishes executing, it displays
+     that command's output followed by a new prompt.
+
+.SH PROMPT
+     The  prompt,  $,  which  is  called  the command prompt, is
+     issued by the shell. While the prompt is displayed, you can
+     type a command.
+     Shell reads your input after you press Enter. It determines
+     the command you want  executed by looking at the first word
+     of  your  input. A  word  is  an unbroken set of characters.
+     Spaces and tabs separate words.
+
+
+.SH OPTIONS
+
+Built-ins
+
+     cd [arg]
+     Change  the  current working directory. The shell parameter
+     $HOME is the default if no directory is specified. If no
+     directory arg is found and the  $CDPATH   parameter  contains
+     a  list  of directories separated by colons, each of these
+     directories is used as a prefix to arg in the given order,
+     and the current directory is set to the first one that is found.
+     $ cd /usf/lb
+
+     env
+     Prints the current environment
+
+     exit [n]
+     Causes the shell to exit with the exit status  specified by
+     n. If n is omitted then the exit status is that of the last
+     command executed. (An end of file will  also exit  from the
+     shell).
+
+Examples of Commands
+
+     pwd
+     Prints the name of the current directory. man pwd for more info
+
+     ls
+     Lists the files in the current working directory. man ls for more
+     info.
+
+     echo
+     Displays a string to standard output. man echo for more info.
+
+     sh
+     A shell program written by Ken Thompson. man sh for more info.
+
+.SH ENVIRONMENT
+
+Examples of Environment Variables
+
+     PATH
+     A list of directories for executables.
+
+     HOME
+     The default home directory of the system
+
+     USER
+     The user of the current system
+
+     PWD
+     The current parent directory
+
+.SH SEE ALSO
+    sh(1),  csh(1),  environ(7),  execve(2), exit(3), getline(3),
+    kill(2), malloc(3), perror(3), signal(2), strtok(3), wait(2),
+    _exit(2), isatty(3).
+
+.SH EXAMPLE CODE
+
+From Main Function:
+
+
+#define _GNU_SOURCE
+
+#include <stdio.h>
+
+#include "holberton.h"
+
+.SH BUGS
+     Not discovered yet
+
+.SH AUTHORS
+     Written by Laura Álvarez and Juan Granada
