@@ -1,15 +1,16 @@
 #include "holberton.h"
-int counter_words(char *string);
-int _execute(char **argv);
-void _analize(char *str)
+/**
+ * _analize - function to split a str
+ * @str: string to split
+ * Return: str
+ */
+char **_analize(char *str)
 {
 	char *tokenizar;
 	int i = 1;
 	int n = counter_words(str);
 	char **argv = malloc(sizeof(char *) * (n + 1));
 	*argv = strtok(str, " \n\t");
-	//_which(str);
-	//return;
 
 	while (i <= n)
 	{
@@ -18,14 +19,18 @@ void _analize(char *str)
 
 	}
 	argv[i] = NULL;
-	_execute(argv);
-	free(argv);
+	return (argv);
 }
+/**
+ * counter_words - function count the words of a string
+ * @string: string to count the words
+ * Return: number of words
+ */
 int counter_words(char *string)
 {
 	int state = 1;
 	int counting = 0;
-	
+
 	while (*string)
 	{
 		if (*string == '\n' || *string == '\t' || *string == ' ')
@@ -33,7 +38,7 @@ int counter_words(char *string)
 		else
 			if (state == 1)
 				counting++, state = 0;
-				string++;
-		}
+		string++;
+	}
 	return (counting);
 }
