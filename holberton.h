@@ -10,11 +10,10 @@
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
 char *_str_concat(char *s1, char *s2);
-int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
 char *_which(char *s);
 char *_getenv(const char *name);
-void _analize(char *str);
+char **_analize(char *str);
 int _execute(char **argv);
 extern char **environ;
 void _envprint(char **env);
