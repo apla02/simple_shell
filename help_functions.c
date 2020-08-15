@@ -33,9 +33,9 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
-* _strcat -  function to concatenate two strings
-* @dest: first string
-* @src: second string
+* _str_concat -  function to concatenate two strings
+* @s1: first string
+* @s2: second string
 * Return: no zero
 */
 char *_str_concat(char *s1, char *s2)
@@ -70,25 +70,6 @@ char *_str_concat(char *s1, char *s2)
 
 	return (concatenar);
 }
-/**
-* _strcmp -  function to compare two strings
-* @s1: first string
-* @s2: second string
-* Return: no zero
-*/
-int _strcmp(char *s1, char *s2)
-{
-	int i = 0, j = 0;
-
-	while ((s1[i] && s2[j]) && s1[i] == s2[j])
-		i++, j++;
-
-	if (s1[i] == s2[j])
-		return (0);
-	else
-		return (s1[i] - s2[j]);
-	return (0);
-}
 
 /**
  * _strdup - returns a pointer to the new copy of string allocated with malloc
@@ -116,22 +97,21 @@ char *_strdup(char *str)
 }
 /**
  * _match - compare to the new copy of string allocated with malloc
- * @str: string 1 to compare
+ * @str1: string 1 to compare
  * @line: str 2 to compare
  * Return: Pointer to newly allocated space in memory
  */
 int _match(char *str1, char *line)
 {
-    while (*str1)
-    {
-      
-      if(*str1 == *line)
-        str1++, line++;
-      else
-        break;
-    }
-    if (*str1)
-      return (1);
-    else  
-      return(0);
+	while (*str1)
+	{
+		if (*str1 == *line)
+			str1++, line++;
+		else
+			break;
+	}
+	if (*str1)
+		return (1);
+	else
+		return (0);
 }
