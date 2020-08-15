@@ -6,10 +6,12 @@
  */
 char **_analize(char *str)
 {
-	char *tokenizar;
 	int i = 1;
 	int n = counter_words(str);
 	char **argv = malloc(sizeof(char *) * (n + 1));
+
+	if (argv == NULL)
+		return (NULL);
 	*argv = strtok(str, " \n\t");
 
 	while (i <= n)
@@ -21,6 +23,7 @@ char **_analize(char *str)
 	argv[i] = NULL;
 	return (argv);
 }
+
 /**
  * counter_words - function count the words of a string
  * @string: string to count the words
