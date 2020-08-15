@@ -33,7 +33,7 @@ char *_which(char *arg)
 			free(buffer);
 			free(extension);
 			free(whole_path);
-			printf("%s\n", whole_path1);
+			/*printf("%s\n", whole_path1);*/
 			return (whole_path1);
 		}
 		i++;
@@ -41,6 +41,7 @@ char *_which(char *arg)
 	}
 	free(extension);
 	free(get_path1);
+	/*printf("%s\n", arg);*/
 return (arg);
 }
 /**
@@ -64,10 +65,4 @@ int counter_paths(char *string)
 	}
 	return (counting + 1);
 }
-int main()
-{
 
-	char *name = "cp";
-	_which(name);
-	return (0);
-}
