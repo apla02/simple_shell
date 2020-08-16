@@ -4,7 +4,7 @@
 #include <unistd.h>
 /**
  * INThandler - function to handle the signal int
- * sig: signal
+ * @sig: signal
  * Return: none
  */
 void INThandler(int sig)
@@ -32,12 +32,12 @@ int main(void)
 		char **argv = _analize(line);
 
 		argv[0] = _which(argv[0]);
-		if (!(_match("exit", argv[0])))
+		if (!(_strcmp("exit", argv[0])))/*valida si ingreso "exit"*/
 		{
 			free(argv);
 			exit(EXIT_SUCCESS);
 		}
-		else if (!(_match("env", argv[0])))/*error cuando ingreso enva o envh también lo lee*, arreglar función match*/
+		else if (!(_strcmp("env", argv[0])))/*valida si ingreso "env"*/
 			_envprint(environ);
 		else if ((stat(argv[0], &exist)) == 0)
 			_execute(argv);
