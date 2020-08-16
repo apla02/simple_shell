@@ -20,7 +20,6 @@ void INThandler(int sig)
 int main(void)
 {
 	char *line = NULL;
-	struct stat exist;
 	size_t n = 0;
 	ssize_t read;
 
@@ -31,22 +30,11 @@ int main(void)
 	{
 		char **argv = _analize(line);
 
-		argv[0] = _which(argv[0]);
-		if (!(_strcmp("exit", argv[0])))/*valida si ingreso "exit"*/
-		{
-			free(argv);
-			exit(EXIT_SUCCESS);
-		}
-		else if (!(_strcmp("env", argv[0])))/*valida si ingreso "env"*/
-			_envprint(environ);
-		else if ((stat(argv[0], &exist)) == 0)
-			_execute(argv);
-		else
-			perror("command not found\n");/*revisar el  "" error de stdoutput*/
-	write(STDIN_FILENO, "$ ", 2);
-	free(argv);
-	free(line);
-	line = NULL, n = 0;
+		_execute(argv);
+		write(STDIN_FILENO, "$ ", 2);
+		free(argv);
+		free(line);
+		line = NULL, n = 0;
 	}
 	if (read == EOF)
 		return (EXIT_FAILURE);
