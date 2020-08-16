@@ -48,5 +48,7 @@ int main(void)
 	free(line);
 	line = NULL, n = 0;
 	}
-	return (0);
+	if (read == EOF)
+		return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
 }
