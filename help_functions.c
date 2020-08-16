@@ -12,25 +12,28 @@ int _strlen(char *s)
 	;
 	return (len);
 }
+
+#include "holberton.h"
 /**
- * _strcpy - function
- * @dest: pointer
- * @src: pinter
- * Return: diferent zero
- */
-
-char *_strcpy(char *dest, char *src)
+* _strcmp -  function to compare two strings
+* @s1: first string
+* @s2: second string
+* Return: no zero
+*/
+int _strcmp(char *s1, char *s2)
 {
-	int i = 0;
+	int i = 0, j = 0;
 
-	while (src[i])
-	{
-		dest[i] = src[i] + '\0';
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	while ((s1[i] && s2[j]) && s1[i] == s2[j])
+		i++, j++;
+	if (s1[i] == s2[j])
+		return (0);
+	else
+		return (s1[i] - s2[j]);
+	return (0);
 }
+
+
 
 /**
 * _str_concat -  function to concatenate two strings
