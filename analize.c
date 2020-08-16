@@ -14,7 +14,7 @@ char **_analize(char *str)
 		return (NULL);
 	*argv = strtok(str, " \n\t");
 
-	while (i <= n)
+	while (i < n)
 	{
 		argv[i] = strtok(NULL, " \n\t");
 		i++;
