@@ -8,7 +8,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
+int _strcmp(char *s1, char *s2);
 char *_str_concat(char *s1, char *s2);
 char *_strdup(char *str);
 char *_which(char *s);
