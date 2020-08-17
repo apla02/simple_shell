@@ -13,6 +13,7 @@ char *_str_concat(char *s1, char *s2);
 char *_strdup(char *str);
 char *_which(char *s);
 char *_getenv(const char *name);
+int check_exit(char *str);
 char **_analize(char *str);
 int _execute(char **argv);
 extern char **environ;
