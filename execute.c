@@ -25,11 +25,6 @@ int _execute(char **argv)
 				free(argv);
 				exit(EXIT_FAILURE);
 			}
-			else if (!(_strcmp("exit", argv[0])))
-			{
-				free(argv);
-				exit(EXIT_SUCCESS);
-			}
 			else if (!(_strcmp("env", argv[0])))
 			{
 				_envprint(environ);
@@ -38,6 +33,7 @@ int _execute(char **argv)
 				execve(*argv, argv, NULL);
 			else
 				perror("error");
+				exit(EXIT_SUCCESS);
 		}
 		else
 			wait(&status);
