@@ -40,7 +40,6 @@ char *_which(char *arg)
 		free(whole_path);
 	}
 	free(extension);
-	free(whole_path);
 	free(buffer);
 	free(get_path1);
 	/*printf("%s\n", arg);*/
