@@ -22,9 +22,8 @@ int main(void)
 	char *line = NULL;
 	size_t n = 0;
 	ssize_t read;
-
-	if (isatty(STDIN_FILENO))
-		write(STDIN_FILENO, "$ ", 2);
+	
+	write(STDIN_FILENO, "$ ", 2);
 	signal(SIGINT, INThandler);
 	while ((read = getline(&line, &n, stdin)) != EOF)/* lee la linea*/
 	{
@@ -34,8 +33,10 @@ int main(void)
 			continue;
 		}
 		char **argv = _analize(line);
-		if ((check_exit(argv[0]) == 0)
+
+		if ((check_exit(argv[0])) == 0)
 		{
+			free(line);
 			free(argv);
 			exit(EXIT_SUCCESS);
 		}
@@ -44,9 +45,13 @@ int main(void)
 		write(STDIN_FILENO, "$ ", 2);
 		free(argv);
 		free(line);
-		line = NULL, n = 0;
+		line = NULL;
+		n = 0;
 	}
 	if (read == EOF)
-		return (EXIT_FAILURE);
+	{
+		free(line);
+		exit(EXIT_FAILURE);
+	}
 	return (EXIT_SUCCESS);
 }

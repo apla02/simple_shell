@@ -30,7 +30,14 @@ int _execute(char **argv)
 				_envprint(environ);
 			}
 			else if ((stat(argv[0], &exist)) == 0)
-				execve(*argv, argv, NULL);
+			{
+				if ((execve(*argv, argv, NULL)) == -1)
+				{
+					free(argv);
+					exit(EXIT_FAILURE);
+				}
+				exit(EXIT_SUCCESS);
+			}
 			else
 				perror("error");
 				exit(EXIT_SUCCESS);
