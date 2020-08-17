@@ -28,7 +28,17 @@ int main(void)
 	signal(SIGINT, INThandler);
 	while ((read = getline(&line, &n, stdin)) != EOF)/* lee la linea*/
 	{
+		if (*line == '\n')
+		{
+			write(STDIN_FILENO, "$ ", 2);
+			continue;
+		}
 		char **argv = _analize(line);
+		if ((check_exit(argv[0]) == 0)
+		{
+			free(argv);
+			exit(EXIT_SUCCESS);
+		}
 
 		_execute(argv);
 		write(STDIN_FILENO, "$ ", 2);
