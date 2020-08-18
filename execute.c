@@ -20,10 +20,9 @@ int _execute(char **argv)
 			argv[0] = _which(argv[0]);
 			if (argv == NULL)
 			{
-				perror("Error:");
 				free(argv[0]);
 				free(argv);
-				exit(EXIT_FAILURE);
+				exit(EXIT_SUCCESS);
 			}
 			else if (!(_strcmp("env", argv[0])))
 			{
@@ -39,8 +38,8 @@ int _execute(char **argv)
 				exit(EXIT_SUCCESS);
 			}
 			else
-				perror("error");
-				exit(EXIT_SUCCESS);
+				error(argv, "command not found\n");
+				exit(127);
 		}
 		else
 			wait(&status);
