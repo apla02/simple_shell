@@ -22,8 +22,9 @@ int main(void)
 	char *line = NULL;
 	size_t n = 0;
 	ssize_t read;
-	
-	write(STDIN_FILENO, "$ ", 2);
+
+	if (isatty(STDIN_FILENO))
+		write(STDIN_FILENO, "$ ", 2);
 	signal(SIGINT, INThandler);
 	while ((read = getline(&line, &n, stdin)) != EOF)/* lee la linea*/
 	{
