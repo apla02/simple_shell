@@ -7,4 +7,3 @@ Shell  was developed and tested on Ubuntu 14.04 LTS via Vagrant in VirtualBox.
 
 ### Authors
 Laura Álvarez and Juan Granada
-
