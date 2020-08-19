@@ -11,6 +11,7 @@ void INThandler(int sig)
 {
 	(void)sig;
 	write(STDOUT_FILENO, "\n$ ", 3);
+	exit(EXIT_SUCCESS);
 }
 /**
  * main - function to prompt the simple shell
@@ -42,7 +43,6 @@ int main(void)
 		{
 			free(line);
 			free(argv);
-			exit(EXIT_SUCCESS);
 		}
 		_execute(argv);
 		write(STDIN_FILENO, "$ ", 2);
@@ -54,7 +54,7 @@ int main(void)
 	if (read == EOF)
 	{
 		free(line);
-		exit(EXIT_FAILURE);
+		return (EXIT_SUCCESS);
 	}
 	return (EXIT_SUCCESS);
 }

@@ -11,36 +11,34 @@ int _execute(char **argv)
 	pid_t child_pid = fork();
 	struct stat exist;
 
-		if (child_pid == -1)
+	if (child_pid == -1)
+	{
+		perror("Error: ");
+	}
+	else if (child_pid == 0)
+	{
+		argv[0] = _which(argv[0]);
+		if (argv == NULL)
 		{
-			perror("Error: ");
-			exit(EXIT_FAILURE);
+			free(argv[0]);
+			free(argv);
 		}
-		if (child_pid == 0)
+		else if ((stat(argv[0], &exist)) == 0 && exist.st_mode & S_IXUSR)
 		{
-			argv[0] = _which(argv[0]);
-			if (argv == NULL)
+			if ((execve(*argv, argv, environ)) == -1)
 			{
 				free(argv[0]);
 				free(argv);
-				exit(EXIT_SUCCESS);
-			}
-			else if ((stat(argv[0], &exist)) == 0)
-			{
-				if ((execve(*argv, argv, environ)) == -1)
-				{
-					free(argv);
-					exit(EXIT_FAILURE);
-				}
-				exit(EXIT_SUCCESS);
+				perror("Error ");
 			}
 			else
-			{
-				error_message(argv, n);
-				exit(127);
-			}
+				free(argv[0]);
+				free(argv);
 		}
-		else
-			wait(&status);
+		error_message(argv, n);
+		errno = 127;
+	}
+	else
+		wait(&status);
 	return (0);
 }
