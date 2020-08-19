@@ -1,11 +1,13 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
+#define _GNU_SOURCE
 #include <sys/wait.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <errno.h>
 /*Functions to handle strings*/
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
