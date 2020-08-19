@@ -8,14 +8,15 @@
 .HSH SYNOPSIS
     $ [command] [-flags ]
 
-.SH DESCRIPTION
-     A Shell provides you with an interface to the system kernel.
+.HSH DESCRIPTION
+     A Holberton Shell provides you with a limited interface to 
+     the system kernel.
      It gathers input from you and  executes  programs  based on
      that input. When a program  finishes executing, it displays
      that command's output followed by a new prompt.
 
 .HSH PROMPT
-     The  prompt,  $,  which  is  called  the command prompt, is
+     The  prompt, $ ,  which  is  called  the command prompt, is
      issued by the shell. While the prompt is displayed, you can
      type a command.
      Shell reads your input after you press Enter. It determines
@@ -45,6 +46,8 @@ Built-ins
      n. If n is omitted then the exit status is that of the last
      command executed. (An end of file will  also exit  from the
      shell).
+
+     
 
 Examples of Commands
 
