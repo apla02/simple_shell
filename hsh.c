@@ -33,7 +33,6 @@ int main(void)
 		if (*line == '\n')
 		{
 			write(STDIN_FILENO, "$ ", 2);
-			free(line);
 			continue;
 		}
 		char **argv = _analize(line);
