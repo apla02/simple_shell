@@ -36,7 +36,6 @@ int _execute(char **argv)
 				free(argv);
 		}
 		error_message(argv, n);
-		errno = 127;
 	}
 	else
 		wait(&status);

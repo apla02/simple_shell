@@ -38,11 +38,11 @@ int main(void)
 			continue;
 		}
 		argv = _analize(line);
-
 		if ((check_exit(argv[0])) == 0)
 		{
 			free(line);
 			free(argv);
+			exit(EXIT_SUCCESS);
 		}
 		_execute(argv);
 		write(STDIN_FILENO, "$ ", 2);
