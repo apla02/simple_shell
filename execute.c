@@ -23,7 +23,7 @@ int _execute(char **argv)
 			free(argv[0]);
 			free(argv);
 		}
-		else if ((stat(argv[0], &exist)) == 0 && exist.st_mode & S_IXUSR)
+		else if ((stat(argv[0], &exist)) == 0 /*&& exist.st_mode & S_IXUSR*/)
 		{
 			if ((execve(*argv, argv, environ)) == -1)
 			{

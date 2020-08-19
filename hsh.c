@@ -26,9 +26,8 @@ int main(void)
 	int count = 0;
 	char **argv;
 
-	if (isatty(STDIN_FILENO))
-		write(STDIN_FILENO, "$ ", 2);
-	signal(SIGINT, INThandler);
+	write(STDIN_FILENO, "$ ", 2);
+	/*signal(SIGINT, INThandler);*/
 	while ((read = getline(&line, &n, stdin)) != EOF)/* lee la linea*/
 	{
 		count++;
