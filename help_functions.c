@@ -16,62 +16,52 @@ int _strlen(char *s)
 #include "holberton.h"
 /**
 * _strcmp -  function to compare two strings
-* @s1: first string
-* @s2: second string
+* @str1: first string
+* @str2: second string
 * Return: no zero
 */
-int _strcmp(char *s1, char *s2)
+int _strcmp(char *str1, char *str2)
 {
 	int i = 0, j = 0;
 
-	while ((s1[i] && s2[j]) && s1[i] == s2[j])
+	while ((str1[i] && str2[j]) && str1[i] == str2[j])
 		i++, j++;
-	if (s1[i] == s2[j])
+	if (str1[i] == str2[j])
 		return (0);
 	else
-		return (s1[i] - s2[j]);
+		return (str1[i] - str2[j]);
 	return (0);
 }
 
 /**
-* _str_concat -  function to concatenate two strings
-* @s1: first string
-* @s2: second string
+* _str_concat -  function to concatatenate two strings
+* @str1: first string
+* @str2: second string
 * Return: no zero
 */
-char *_str_concat(char *s1, char *s2)
+char *_str_concat(char *str1, char *str2)
 {
-	char *concatenar;
-	unsigned int i, j, cp, r, final_leng;
+	char *concat;
+	unsigned int i = 0, j = 0, len = 0, index = 0;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
-	for (i = 0; s1[i]; i++)
-		;
-	for (j = 0; s2[j]; j++)
-		;
-	final_leng = i + j + 1;
-
-	concatenar = malloc(final_leng * sizeof(char));
-
-	if (concatenar == NULL)
+	if (str1 == NULL)
+		str1 = NULL;
+	if (str2 == NULL)
+		str2 = NULL;
+	i = _strlen(str1);
+	j = _strlen(str2);
+	len = i + j + 1;
+	concat = malloc(sizeof(char) * len);
+	if (concat == NULL)
 		return (NULL);
+	for (index = 0; index < i; index++)
+		concat[index] = str1[index];
+	for (index = 0; index <= j; i++, index++)
+		concat[i] = str2[index];
 
-	for (cp = 0; cp < i; cp++)
-	{
-		concatenar[cp] = s1[cp];
-	}
-	for (r = 0; r < j; cp++, r++)
-	{
-		concatenar[cp] = s2[r];
-	}
-
-	return (concatenar);
+	return (concat);
+	free(concat);
 }
-
 /**
  * _strdup - returns a pointer to the new copy of string allocated with malloc
  * @str: string to copy
