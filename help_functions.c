@@ -60,7 +60,6 @@ char *_str_concat(char *str1, char *str2)
 		concat[i] = str2[index];
 
 	return (concat);
-	free(concat);
 }
 /**
  * _strdup - returns a pointer to the new copy of string allocated with malloc
@@ -86,23 +85,4 @@ char *_strdup(char *str)
 		*(dest + j) = *(str + j);
 	return (dest);
 }
-/**
- * _match - compare to the new copy of string allocated with malloc
- * @str1: string 1 to compare
- * @line: str 2 to compare
- * Return: Pointer to newly allocated space in memory
- */
-int _match(char *str1, char *line)
-{
-	while (*str1)
-	{
-		if (*str1 == *line)
-			str1++, line++;
-		else
-			break;
-	}
-	if (*str1)
-		return (1);
-	else
-		return (0);
-}
+

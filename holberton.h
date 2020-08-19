@@ -17,9 +17,7 @@ int check_exit(char *str);
 char **_analize(char *str);
 int _execute(char **argv);
 extern char **environ;
-void _envprint(char **env);
-int _match(char *str1, char *line);
 int counter_paths(char *string);
 int counter_words(char *string);
-void build_error_message(char **argv, int count);
+void error_message(char **argv, int count);
 #endif

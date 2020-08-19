@@ -36,7 +36,7 @@ int _execute(char **argv)
 			}
 			else
 			{
-				build_error_message(argv, n);
+				error_message(argv, n);
 				exit(127);
 			}
 		}
