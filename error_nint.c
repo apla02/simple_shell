@@ -11,11 +11,10 @@ int _putchar(char c)
 /**
  * build_error_message -fn to display the error message
  * @argv: pointer of arrays
- * @argv_0: first command
  * @n:counts the errors
  * Return: none
 */
-void build_error_message(char **argv, char *argv_0, int n)
+void build_error_message(char **argv, int n)
 {
 	int mul, numlength, copy;
 
@@ -42,7 +41,7 @@ void build_error_message(char **argv, char *argv_0, int n)
 	}
 	_putchar(n % 10 + '0');
 	write(STDERR_FILENO, ": ", 2);
-	write(STDERR_FILENO, argv_0, _strlen(argv_0));
+	write(STDERR_FILENO, argv[0], _strlen(argv[0]));
 	write(STDERR_FILENO, ": not found\n", 12);
 }
 
