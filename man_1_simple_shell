@@ -2,10 +2,10 @@
 
 .TH dash 1 "06 August 2020" "1.0" "shell man page"
 
-.SH NAME
-    sh - interface to the Unix system kernel
+.HSH NAME
+    hsh - interface to the Unix system kernel
 
-.SH SYNOPSIS
+.HSH SYNOPSIS
     $ [command] [-flags ]
 
 .SH DESCRIPTION
@@ -14,7 +14,7 @@
      that input. When a program  finishes executing, it displays
      that command's output followed by a new prompt.
 
-.SH PROMPT
+.HSH PROMPT
      The  prompt,  $,  which  is  called  the command prompt, is
      issued by the shell. While the prompt is displayed, you can
      type a command.
@@ -24,7 +24,7 @@
      Spaces and tabs separate words.
 
 
-.SH OPTIONS
+.HSH OPTIONS
 
 Built-ins
 
@@ -55,13 +55,10 @@ Examples of Commands
      Lists the files in the current working directory. man ls for more
      info.
 
-     echo
-     Displays a string to standard output. man echo for more info.
-
-     sh
+     hsh
      A shell program written by Ken Thompson. man sh for more info.
 
-.SH ENVIRONMENT
+.HSH ENVIRONMENT
 
 Examples of Environment Variables
 
@@ -77,12 +74,12 @@ Examples of Environment Variables
      PWD
      The current parent directory
 
-.SH SEE ALSO
+.HSH SEE ALSO
     sh(1),  csh(1),  environ(7),  execve(2), exit(3), getline(3),
     kill(2), malloc(3), perror(3), signal(2), strtok(3), wait(2),
-    _exit(2), isatty(3).
+    exit(2), isatty(3).
 
-.SH EXAMPLE CODE
+.HSH EXAMPLE CODE
 
 From Main Function:
 
