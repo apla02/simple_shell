@@ -21,5 +21,5 @@ void _envprint(char **env);
 int _match(char *str1, char *line);
 int counter_paths(char *string);
 int counter_words(char *string);
-void build_error_message(char **argv, char *fir_com, int count);
+void build_error_message(char **argv, int count);
 #endif
