@@ -6,6 +6,7 @@
  */
 int _execute(char **argv)
 {
+	int n = 1;
 	int status;
 	pid_t child_pid = fork();
 	struct stat exist;
@@ -35,7 +36,7 @@ int _execute(char **argv)
 			}
 			else
 			{
-				build_error_message(argv, argv[0], count);
+				build_error_message(argv, n);
 				exit(127);
 			}
 		}

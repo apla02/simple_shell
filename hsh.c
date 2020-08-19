@@ -22,12 +22,14 @@ int main(void)
 	char *line = NULL;
 	size_t n = 0;
 	ssize_t read;
+	int count = 0;
 
 	if (isatty(STDIN_FILENO))
 		write(STDIN_FILENO, "$ ", 2);
 	signal(SIGINT, INThandler);
 	while ((read = getline(&line, &n, stdin)) != EOF)/* lee la linea*/
 	{
+		count++;
 		if (*line == '\n')
 		{
 			write(STDIN_FILENO, "$ ", 2);
@@ -41,7 +43,6 @@ int main(void)
 			free(argv);
 			exit(EXIT_SUCCESS);
 		}
-
 		_execute(argv);
 		write(STDIN_FILENO, "$ ", 2);
 		free(argv);
