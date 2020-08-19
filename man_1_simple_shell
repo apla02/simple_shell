@@ -9,7 +9,7 @@
     $ [command] [-flags ]
 
 .HSH DESCRIPTION
-     A Holberton Shell provides you with a limited interface to 
+     A Holberton Shell provides you with a limited interface to
      the system kernel.
      It gathers input from you and  executes  programs  based on
      that input. When a program  finishes executing, it displays
