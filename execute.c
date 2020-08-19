@@ -24,13 +24,9 @@ int _execute(char **argv)
 				free(argv);
 				exit(EXIT_SUCCESS);
 			}
-			else if (!(_strcmp("env", argv[0])))
-			{
-				_envprint(environ);
-			}
 			else if ((stat(argv[0], &exist)) == 0)
 			{
-				if ((execve(*argv, argv, NULL)) == -1)
+				if ((execve(*argv, argv, environ)) == -1)
 				{
 					free(argv);
 					exit(EXIT_FAILURE);
@@ -38,8 +34,10 @@ int _execute(char **argv)
 				exit(EXIT_SUCCESS);
 			}
 			else
-				error(argv, "command not found\n");
+			{
+				build_error_message(argv, argv[0], count);
 				exit(127);
+			}
 		}
 		else
 			wait(&status);
