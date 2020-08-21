@@ -32,7 +32,7 @@ info.
     <h2 align="center">Examples</h2>
       <p align="center">
         <a>
-            <img alt="example_shell" src="https://github.com/apla02/simple_shell/blob/master/example_shell" style="float: center; margin-right: 10px" height="50" width="50">
+            <img alt="example_shell" src="https://github.com/apla02/simple_shell/blob/master/example_shell" style="float: center; margin-right: 10px" height="400" width="400">
         </a>
       </p>
 </p>
