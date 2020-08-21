@@ -27,11 +27,15 @@ Prints the name of the current directory. man pwd for more info
 Lists the files in the current working directory. man ls for more
 info.
 
-:black_nib: 
->Examples 
-> $ ls
-> analize.c  check_exit.c     execute.c  help_functions.c  hsh    man_1_simple_shell  README.md
-  AUTHORS    error_message.c  _getenv.c  holberton.h       hsh.c  README_.md          _which.c
+---|---|--- 
+<p align="center">
+    <h2 align="center">Examples</h2>
+      <p align="center">
+        <a>
+            <img alt="example_shell" src="/home/holberton/Documents/example_shell" style="float: center; margin-right: 10px" height="50" width="50">
+        </a>
+      </p>
+</p>
 
 ---
 ### :file_folder: Files / Directories 
