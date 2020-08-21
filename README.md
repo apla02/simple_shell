@@ -17,6 +17,7 @@ In this project, we created our own simple shell
 >A Holberton Shell provides you with a limited interface to the system kernel.
 It gathers input from you and  executes  programs  based on that input. When a program  finishes executing, it displays that command's output followed by a new prompt.
 
+:black_nib: 
 >Examples of Commands
 
 >pwd
@@ -26,8 +27,11 @@ Prints the name of the current directory. man pwd for more info
 Lists the files in the current working directory. man ls for more
 info.
 
->hsh
-A shell program written by Ken Thompson. man sh for more info.
+:black_nib: 
+>Examples 
+> $ ls
+> analize.c  check_exit.c     execute.c  help_functions.c  hsh    man_1_simple_shell  README.md
+  AUTHORS    error_message.c  _getenv.c  holberton.h       hsh.c  README_.md          _which.c
 
 ---
 ### :file_folder: Files / Directories 
