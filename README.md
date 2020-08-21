@@ -21,17 +21,17 @@ It gathers input from you and  executes  programs  based on that input. When a p
 ### :file_folder: Files / Directories 
 ##|File|Description
 ---|---|---
-1|[README.md](https://github.com/apla02/simple_shell/README.md)|this file contains the specifiacion of the project
-2|[AUTHORS](https://github.com/apla02/simple_shell/AUTHORS)|this file contains the authors of the project
-3|[man_1_simple_shell](https://github.com/apla02/simple_shell/man_1_simple_shell)|this file contains the man page of the project
-4|[hsh.c](https://github.com/apla02/simple_shell/hsh.c)|This file contains the printf function to our project.
-5|[Holberton.h](https://github.com/apla02/simple_shell/holberton.h)|this file contains the headers file. It includes the guards and prototipes.
-6|[help_functions.c ](https://github.com/apla02/simple_shell/help_functions.h)|This file include the functions to handle strings.
-7|[_getenv.c](https://github.com/apla02/simple_shell/_getenv.c)|This file include the function to get the environment.
-8|[which.c](https://github.com/apla02/simple_shell/which.c)|This file include the program to return a path of the command
-9|[analize.c](https://github.com/apla02/simple_shell/analize.c)|this file contains the  function to split the line
-10|[execute.c][README.md](https://github.com/apla02/simple_shell/execute)|this file contains the function for execute the arguments
-11|[check_exit.c](https://github.com/oimoralest/printf/blob/master/check_exit.c)|This file include the function to exit the program
+1|[README.md](https://github.com/apla02/simple_shell/blob/master/README.md)|this file contains the specifiacion of the project
+2|[AUTHORS](https://github.com/apla02/simple_shell/blob/master/AUTHORS)|this file contains the authors of the project
+3|[man_1_simple_shell](https://github.com/apla02/simple_shell/blob/master/man_1_simple_shell)|this file contains the man page of the project
+4|[hsh.c](https://github.com/apla02/simple_shell/blob/master/hsh.c)|This file contains the printf function to our project.
+5|[Holberton.h](https://github.com/apla02/simple_shell/blob/master/holberton.h)|this file contains the headers file. It includes the guards and prototipes.
+6|[help_functions.c ](https://github.com/apla02/simple_shell/blob/master/help_functions.h)|This file include the functions to handle strings.
+7|[_getenv.c](https://github.com/apla02/simple_shell/blob/master/_getenv.c)|This file include the function to get the environment.
+8|[which.c](https://github.com/apla02/simple_shell/blob/master/which.c)|This file include the program to return a path of the command
+9|[analize.c](https://github.com/apla02/simple_shell/blob/master/analize.c)|this file contains the  function to split the line
+10|[execute.c](https://github.com/apla02/simple_shell/blob/master/execute)|this file contains the function for execute the arguments
+11|[check_exit.c](https://github.com/apla02/simple_shell/blob/master/check_exit.c)|This file include the function to exit the program
 ---
 
 ---
