@@ -16,7 +16,19 @@ In this project, we created our own simple shell
 
 >A Holberton Shell provides you with a limited interface to the system kernel.
 It gathers input from you and  executes  programs  based on that input. When a program  finishes executing, it displays that command's output followed by a new prompt.
-           
+
+>Examples of Commands
+
+>pwd
+Prints the name of the current directory. man pwd for more info
+
+>ls
+Lists the files in the current working directory. man ls for more
+info.
+
+>hsh
+A shell program written by Ken Thompson. man sh for more info.
+
 ---
 ### :file_folder: Files / Directories 
 ##|File|Description
