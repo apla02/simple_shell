@@ -1,12 +1,14 @@
-.\" Manpage for Shell
-
-.TH dash 1 "06 August 2020" "1.0" "shell man page"
-
-.HSH NAME
-    hsh - interface to the Unix system kernel
-
-.HSH SYNOPSIS
-    $ [command] [-flags ]
+.Dd 20/07/20              
+.Dt HSH(1)    
+.Os Holberton
+.Sh NAME                 
+.Nm hsh
+.Nd command interpreter (shell)
+.Sh SYNOPSIS            
+.Nm #include "holberton.h"   
+.Bl -tag -width -indent 
+.Nm $ [command] [-flags ]
+.Bl -tag -width 
 
 .HSH DESCRIPTION
      A Holberton Shell provides you with a limited interface to
@@ -76,6 +78,15 @@ Examples of Environment Variables
 
      PWD
      The current parent directory
+
+.HSH ENVIRONMENT
+
+Examples of the prompt
+
+holberton@holberton-ThinkPad-L480:~/Documents/Laura/simple_shell$ ls
+
+analize.c  check_exit.c     example_shell  _getenv.c         holberton.h  hsh.c  man_1_simple_shell  README.md
+AUTHORS    error_message.c  execute.c      help_functions.c  hsh          man    README_.md          _which.c
 
 .HSH SEE ALSO
     sh(1),  csh(1),  environ(7),  execve(2), exit(3), getline(3),
