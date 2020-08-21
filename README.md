@@ -6,7 +6,8 @@
 
 
 In this project, we created our own simple shell 
-:black_nib:  Definition Printf:
+:black_nib: 
+> Definition Shell:
 
 
 > Shell is a command programming language that executes commands read from a terminal or a file.
