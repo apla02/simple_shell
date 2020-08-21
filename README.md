@@ -5,8 +5,7 @@
  <br>
 
 
-In this project, we created our own simple shell [_printf](https://linux.die.net/man/3/printf).
-
+In this project, we created our own simple shell 
 :black_nib:  Definition Printf:
 
 
